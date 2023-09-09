@@ -1,0 +1,1 @@
+list_of_words = ['human','computer','car','candy','love','apartment']
