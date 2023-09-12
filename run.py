@@ -1,5 +1,8 @@
 import random
-from words import list_of_words
+from words import words_1
+from words import words_2
+from words import words_3
+from hangman_stages import hangman
 
 def get_random_word():
     word = random.choice(list_of_words) #Get's a random word in uppercase
