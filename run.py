@@ -20,6 +20,7 @@ def validate_lvl(data):
         return False
     return True
 
+
 class Hangman:
     """
     Class that holds details to create and play game.
@@ -52,12 +53,13 @@ class Hangman:
 
     def guess_letter(self):
         """
-        If validate_guess function comes back as false player gets to guess the letter again, otherwise the loop breaks."
+        If validate_guess function comes back as false player get to guess the letter again, otherwise the loop breaks."
         """
         while True:
-        guess = input("Guess a letter: ")
-        if validate_guess(guess):
-            break
+            guess = input("Guess a letter: ")
+            if self.validate_guess(guess):
+                break
+        self.guesses.append(guess)
 
 
 def main():
