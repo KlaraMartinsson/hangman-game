@@ -4,6 +4,16 @@ from words import words_2
 from words import words_3
 from hangman_stages import hangman
 
+def validate_lvl(data):
+    try:
+        if data.isalpha():
+            raise ValueError(f"You need to enter a whole number. You entered {data}")
+        if data < 1:
+            raise ValueError(f"Minimum lvl is 1. You entered {data}")
+        if data > 3:
+            raise ValueError(f"Maximum lvl is 3. You entered {data}")
+    except ValueError as e:
+        print(f"Invalid input: {e}. Please try again.")
 
 class Hangman:
     """
@@ -29,5 +39,5 @@ def main():
     print("Welcome to hangman!")
     name = input("Enter your name: ").capitalize()
     print(name)
-    
+
 main()
