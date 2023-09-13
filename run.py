@@ -34,25 +34,28 @@ class Hangman:
         print(f"Let's start the game {self.name}. Word to guess is\n{self.word}")
 
 
-"""
-def get_random_word():
-    word = random.choice(list_of_words) #Get's a random word in uppercase
-    return word.upper()
-"""
-
 def main():
     print("Welcome to hangman!")
     name = input("Enter your name: ").capitalize()
     print(name)
     
     global lvl_input
-    
+    global word_input
+
+    """
+    Checks the validate_lvl function if True the while loop breaks. 
+    If False player get to choose lvl again.
+    """
     while True: 
         print("Choose a lvl between 1-3")
         lvl_input = input("Choose lvl: ")
-        if validate_lvl(lvl_input): #Checks the validate_lvl function if True the while loop breaks. If False player get to choose lvl again.
+        if validate_lvl(lvl_input): 
             break
     
+    """ 
+    Pics the correct list with random words for the lvl 
+    choosen by player.
+    """
     if lvl_input == "1":
         word_input = random.choice(words_1)
     elif lvl_input == "2":
