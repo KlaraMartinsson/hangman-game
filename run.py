@@ -44,12 +44,19 @@ def main():
     print("Welcome to hangman!")
     name = input("Enter your name: ").capitalize()
     print(name)
-
+    
+    global lvl_input
+    
     while True: 
         print("Choose a lvl between 1-3")
         lvl_input = input("Choose lvl: ")
         if validate_lvl(lvl_input): #Checks the validate_lvl function if True the while loop breaks. If False player get to choose lvl again.
             break
-
-
+    
+    if lvl_input == "1":
+        word_input = random.choice(words_1)
+    elif lvl_input == "2":
+        word_input = random.choice(words_2)
+    elif lvl_input == "3":
+        word_input = random.choice(words_3)      
 main()
