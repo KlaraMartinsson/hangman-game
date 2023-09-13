@@ -35,6 +35,10 @@ class Hangman:
     
     
     def validate_guess(self, data):
+        """
+        Checks the guess of letter so it's not anything else than a letter,
+        also checks if it is more or less than one letter.
+        """
         try:
             if not data.isalpha():
                 raise ValueError(f"You can only guess letters. You guessed {data}")
@@ -47,6 +51,9 @@ class Hangman:
 
 
     def guess_letter(self):
+        """
+        If validate_guess function comes back as false player gets to guess the letter again, otherwise the loop breaks."
+        """
         while True:
         guess = input("Guess a letter: ")
         if validate_guess(guess):
