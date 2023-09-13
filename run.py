@@ -12,9 +12,9 @@ def validate_lvl(data):
         if data.isalpha():
             raise ValueError(f"You need to enter a whole number. You entered {data}")
         if int(data) < 1:
-            raise ValueError(f"Minimum lvl is 1. You entered {data}")
+            raise ValueError(f"Minimum lvl is 1. You entered: {data}")
         if int(data) > 3:
-            raise ValueError(f"Maximum lvl is 3. You entered {data}")
+            raise ValueError(f"Maximum lvl is 3. You entered: {data}")
     except ValueError as e:
         print(f"Invalid input: {e}. Please try again.")
         return False
@@ -23,7 +23,7 @@ def validate_lvl(data):
 
 class Hangman:
     """
-    Class that holds details to create and play game.
+    Class that holds details to create and play the game.
     """
     def __init__(self, name, word):
         self.name = name
@@ -42,7 +42,7 @@ class Hangman:
         """
         try:
             if not data.isalpha():
-                raise ValueError(f"You can only guess letters. You guessed {data}")
+                raise ValueError(f"You can only guess letters. You guessed: {data}")
             if len(data) != 1:
                 raise ValueError(f"You can only guess one letter at a time. You guessed: {data}")
         except ValueError as e:
@@ -59,7 +59,8 @@ class Hangman:
             guess = input("Guess a letter: ")
             if self.validate_guess(guess):
                 break
-        self.guesses.append(guess) #Guessed letter goes into the list guesses
+        self.guesses.append(guess) # Guessed letter goes into the list guesses
+        self.check_letter(guess) # Calls the function check_letter with the input from the player
 
     def check_letter(self, data):
         """
