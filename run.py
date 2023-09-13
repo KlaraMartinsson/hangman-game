@@ -37,8 +37,9 @@ class Hangman:
     def validate_guess(self, data):
         try:
             if not data.isalpha():
-                raise ValueError(f"You can only enter letters. You entered {data}")
-            if 
+                raise ValueError(f"You can only guess letters. You guessed {data}")
+            if len(data) != 1:
+                raise ValueError(f"You can only guess one letter at a time. You guessed: {data}")
 
 
 
