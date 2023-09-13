@@ -11,12 +11,14 @@ def validate_lvl(data):
     try:
         if data.isalpha():
             raise ValueError(f"You need to enter a whole number. You entered {data}")
-        if data < 1:
+        if int(data) < 1:
             raise ValueError(f"Minimum lvl is 1. You entered {data}")
-        if data > 3:
+        if int(data) > 3:
             raise ValueError(f"Maximum lvl is 3. You entered {data}")
     except ValueError as e:
         print(f"Invalid input: {e}. Please try again.")
+        return False
+    return True
 
 class Hangman:
     """
@@ -43,10 +45,11 @@ def main():
     name = input("Enter your name: ").capitalize()
     print(name)
 
-    while True:
+    while True: 
         print("Choose a lvl between 1-3")
         lvl_input = input("Choose lvl: ")
-        if validate_lvl(lvl_input):
+        if validate_lvl(lvl_input): #Checks the validate_lvl function if True the while loop breaks. If False player get to choose lvl again.
             break
+
 
 main()
