@@ -53,13 +53,22 @@ class Hangman:
 
     def guess_letter(self):
         """
-        If validate_guess function comes back as false player get to guess the letter again, otherwise the loop breaks."
+        If validate_guess function comes back as false player get to guess the letter again, otherwise the loop breaks.
         """
         while True:
             guess = input("Guess a letter: ")
             if self.validate_guess(guess):
                 break
-        self.guesses.append(guess)
+        self.guesses.append(guess) #Guessed letter goes into the list guesses
+
+    def check_letter(self, data):
+        """
+        Checks if the guessed letter is in the word or not.
+        """
+        if data in self.word:
+            print("Correct")
+        else:
+            print("Incorrect")
 
 
 def main():
