@@ -32,8 +32,11 @@ class Hangman:
 
     def start_game(self):
         print(f"Let's start the game {self.name}. Word to guess is\n{self.word}")
+    
+    def guess_letter(self):
+        guess = input("Guess a letter: ")
 
-
+        
 def main():
     print("Welcome to hangman!")
     name = input("Enter your name: ").capitalize()
@@ -53,13 +56,16 @@ def main():
             break
     
     """ 
-    Pics the correct list with random words for the lvl 
-    choosen by player.
+    Picks a list with random words choosed by player depending of lvl difficulty.
     """
     if lvl_input == "1":
-        word_input = random.choice(words_1)
+        word_input = random.choice(words_1).upper()
     elif lvl_input == "2":
-        word_input = random.choice(words_2)
+        word_input = random.choice(words_2).upper()
     elif lvl_input == "3":
-        word_input = random.choice(words_3)      
+        word_input = random.choice(words_3).upper()   
+
+    player = Hangman(name, word_input) 
+    player.start_game()
+    player.guess_letter()
 main()
