@@ -33,10 +33,19 @@ class Hangman:
     def start_game(self):
         print(f"Let's start the game {self.name}. Word to guess is\n{self.word}")
     
+    
+    def validate_guess(self, data):
+        try:
+            if not data.isalpha():
+                raise ValueError(f"You can only enter letters. You entered {data}")
+            if 
+
+
+
     def guess_letter(self):
         guess = input("Guess a letter: ")
 
-        
+
 def main():
     print("Welcome to hangman!")
     name = input("Enter your name: ").capitalize()
