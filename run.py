@@ -40,11 +40,17 @@ class Hangman:
                 raise ValueError(f"You can only guess letters. You guessed {data}")
             if len(data) != 1:
                 raise ValueError(f"You can only guess one letter at a time. You guessed: {data}")
-
+        except ValueError as e:
+            print("Invalid input: {e}. Please try again.")
+            return False
+        return True
 
 
     def guess_letter(self):
+        while True:
         guess = input("Guess a letter: ")
+        if validate_guess(guess):
+            break
 
 
 def main():
