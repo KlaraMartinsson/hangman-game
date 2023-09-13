@@ -5,6 +5,9 @@ from words import words_3
 from hangman_stages import hangman
 
 def validate_lvl(data):
+    """
+    Validates the level the player choose.
+    """
     try:
         if data.isalpha():
             raise ValueError(f"You need to enter a whole number. You entered {data}")
@@ -39,5 +42,11 @@ def main():
     print("Welcome to hangman!")
     name = input("Enter your name: ").capitalize()
     print(name)
+
+    while True:
+        print("Choose a lvl between 1-3")
+        lvl_input = input("Choose lvl: ")
+        if validate_lvl(lvl_input):
+            break
 
 main()
