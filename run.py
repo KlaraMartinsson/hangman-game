@@ -10,7 +10,7 @@ def validate_lvl(data):
     """
     try:
         if data.isalpha():
-            raise ValueError(f"You need to enter a whole number. You entered {data}")
+            raise ValueError(f"You need to enter a whole number. You entered: {data}")
         if int(data) < 1:
             raise ValueError(f"Minimum lvl is 1. You entered: {data}")
         if int(data) > 3:
@@ -56,7 +56,7 @@ class Hangman:
         If validate_guess function comes back as false player get to guess the letter again, otherwise the loop breaks.
         """
         while True:
-            guess = input("Guess a letter: ")
+            guess = input("Guess a letter: ").upper()
             if self.validate_guess(guess):
                 break
         self.guesses.append(guess) # Guessed letter goes into the list guesses
