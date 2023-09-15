@@ -20,7 +20,6 @@ def game_rules(data):
         print("If you guess wrong 6 times you hang your Hangman and lose.\n")
         return True
     elif data == "N":
-        print("This is not the rules")
         return True
     else:
         print("Invalid choice. Please enter 'Y' or 'N'.")
@@ -130,6 +129,7 @@ class Hangman:
             if restart == "Y":
                 return True
             if restart == "N":
+                print("Thanks for playing!")
                 return False
             else:
                 print("Invalid choice. Please enter 'Y' or 'N'.")
@@ -188,7 +188,6 @@ def main():
 
     if player.play_again():
         main()
-        print("Thanks for playing!")
 
 
 main()
