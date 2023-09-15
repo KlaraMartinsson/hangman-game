@@ -19,6 +19,7 @@ def game_rules(data):
     """
     Checks if player want's to read the rules. If not the game continues.
     """
+    clear_terminal()
     if data == "Y":
         print(word_art.rules_style)
         print("=======================================================")
