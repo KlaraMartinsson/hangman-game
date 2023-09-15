@@ -28,8 +28,9 @@ class Hangman:
     def __init__(self, name, word):
         self.name = name
         self.word = word
-        self.guesses = []
-        self.tries = 6
+        self.guesses = [] #Holds the guessed letters
+        self.tries = 6 
+        self.secret_word = len(self.word)*["_"] #Takes the lenght of the word and place an: _ for every letter.
 
     def start_game(self):
         print(f"Let's start the game {self.name}. Word to guess is\n{self.word}")
