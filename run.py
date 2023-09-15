@@ -2,7 +2,7 @@ import random
 from words import words_1
 from words import words_2
 from words import words_3
-from hangman_stages import hangman
+from hangman_stages import hangman_stages
 
 def validate_lvl(data):
     """
@@ -34,7 +34,7 @@ class Hangman:
 
     def start_game(self):
         print(f"Word to guess is\n{self.word}")
-        print(hangman[6])
+        print(hangman_stages(self.tries))
         print(*self.secret_word)
         print(*self.guesses)
     
@@ -80,6 +80,7 @@ class Hangman:
             print(*self.secret_word)
         else:
             print("Incorrect")
+            self.tries -= 1
 
     def word_complete(self):
         """
