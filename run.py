@@ -12,7 +12,8 @@ def game_rules(data):
     clear_terminal()
     if data == "Y":
         print(word_art.rules_style)
-        print("1. You have 3 diffrent levels of difficulity:")
+        print("=======================================================")
+        print("1. You have 3 diffrent levels of difficulty:")
         print("'1' for easy, '2' for medium and '3' for hard.\n")
         print("The levels are based on how hard it is to guess the word.")
         print("For each level the words get longer and more uncommon.\n")
@@ -22,7 +23,9 @@ def game_rules(data):
         print("5. If you guess incorrect a body part adds to Hangman.")
         print("The more body parts the Hangman have..")
         print("..the closer you are to lose.\n")
-        print("You lose the game after 6 wrong guesses.\n")
+        print("6. You lose the game after 6 wrong guesses.\n")
+        print("=======================================================")
+        print("\n")
         return True
     elif data == "N":
         return True
@@ -155,6 +158,8 @@ class Hangman:
 
 def main():
     print(word_art.welcome)
+    print("WELCOME TO THE GAME HANGMAN!")
+    print("============================")
     while True:
         name = input("Enter your name: \n").capitalize()
         if not name.isalpha():
@@ -172,7 +177,7 @@ def main():
     """
     while True:
         rules_input = input(
-            f"Hello, {name}, do you want to read the rules? (Y/N): \n").upper()
+            f"Hello, {name}! Do you want to read the rules? (Y/N): \n").upper()
         if game_rules(rules_input):
             break
 
