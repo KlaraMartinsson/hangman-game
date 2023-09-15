@@ -1,8 +1,7 @@
 import random
 import word_art
-from words import words_1
-from words import words_2
-from words import words_3
+import os
+from words import words_1, words_2, words_3
 from hangman_stages import hangman_stages
 
 
@@ -10,6 +9,7 @@ def game_rules(data):
     """
     Checks if player want's to read the rules. If not the game continues.
     """
+    clear_terminal()
     if data == "Y":
         print(word_art.rules_style)
         print("1. You have 3 diffrent levels of difficulity:")
@@ -22,12 +22,22 @@ def game_rules(data):
         print("5. If you guess incorrect a body part adds to Hangman.")
         print("The more body parts the Hangman have..")
         print("..the closer you are to lose.\n")
-        print("After 6 wrong guesses your Hangman hangs and you lose the game.\n")
+        print("You lose the game after 6 wrong guesses.\n")
         return True
     elif data == "N":
         return True
     else:
         print("Invalid choice. Please enter 'Y' or 'N'.")
+
+
+def clear_terminal():
+    """
+    Clears the terminal.
+    """
+    # From:
+    # https://stackoverflow.com/questions/2084508/clear-terminal-in-python
+
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def validate_level(data):
@@ -57,8 +67,8 @@ class Hangman:
         self.word = [x for x in word]
         self.guesses = []  # Holds the guessed letters
         self.tries = 6
-        self.secret_word = len(self.word)*["_"]
         # Takes the lenght of the word & place an: _ for every letter.
+        self.secret_word = len(self.word)*["_"]
 
     def start_game(self):
         print(hangman_stages(self.tries))
@@ -94,10 +104,11 @@ class Hangman:
             guess = input("Guess a letter: \n").upper()
             if self.validate_guess(guess):
                 break
-        self.guesses.append(guess)
         # Guessed letter goes into the list guesses
-        self.check_letter(guess)
+        self.guesses.append(guess)
         # Calls the function check_letter with the input from the player
+        self.check_letter(guess)
+        clear_terminal()
 
     def check_letter(self, data):
         """
@@ -107,7 +118,7 @@ class Hangman:
         if data not in self.word:
             self.tries -= 1
             print(
-                f"That was incorrect, you have {self.tries} more chances to guess wrong.")
+                f"That was incorrect, {self.tries} more tries to guess wrong.")
 
         while data in self.word:
             i = self.word.index(data)
@@ -139,7 +150,7 @@ class Hangman:
                 print("Thanks for playing!")
                 return False
             else:
-                print("Invalid choice. Please enter 'Y' or 'N'.")
+                print("Invalid choice. Please enter 'Y' or 'N'.\n")
 
 
 def main():
@@ -170,9 +181,10 @@ def main():
     If False player get to choose level again.
     """
     while True:
-        print("Choose a level between 1-3\n")
+        print("Now you have to choose a level between 1-3.\n")
         level_input = input("Choose level: \n")
         if validate_level(level_input):
+            clear_terminal()
             break
 
     """
@@ -192,10 +204,10 @@ def main():
         player.start_game()
         player.guess_letter()
         if player.word_complete():
-            print("You win!")
+            print(f"You win! The word was: {word_input}\n")
             break
         if player.check_tries():
-            print(f"You lose! The word was: {word_input}")
+            print(f"You lose! The word was: {word_input}\n")
             break
 
     if player.play_again():
