@@ -8,11 +8,11 @@ The Hangman game is a Python terminal game deployed to Heroku. The goal of this 
 
 ### User Goals
 As a user I want:
-- First of all to have a simple fun game and be challenged. (The user get's challenged with diffrent levels of difficulty and randomised words at every round.)
-- Secondly, to learn how to play and understand the game. (The user get's to understand the game if they read the rules.)
-- To play the game without any issues. (If an invalid input occurs the player get's to know what is wrong with an error message.)
-- To easily navigate through available options and have clear feedback on my inputs. (The user get's direct feedback when guessing a letter correct or wrong.)
-- To know if I won the game or not and what the secret word was. (The user get's feedback if the won or lose when the game is over. They also get's to know what the secret word was.)
+* First of all to have a simple fun game and be challenged. (The user get's challenged with diffrent levels of difficulty and randomised words at every round.)
+* Secondly, to learn how to play and understand the game. (The user get's to understand the game if they read the rules.)
+* To play the game without any issues. (If an invalid input occurs the player get's to know what is wrong with an error message.)
+* To easily navigate through available options and have clear feedback on my inputs. (The user get's direct feedback when guessing a letter correct or wrong.)
+* To know if I won the game or not and what the secret word was. (The user get's feedback if the won or lose when the game is over. They also get's to know what the secret word was.)
 
 ### Project Goals
 As a programmer of the game, I want the user to meet their goals (above). I also want the game to run smoothly with no bugs.
@@ -90,4 +90,15 @@ I used my school Code Institutes own validator https://pep8ci.herokuapp.com/ to 
     * Fancy text pro
         - To make word art. 
 
-## Deplyment
+## Deployment
+ The app was deployed through Heroku. The steps are as following:
+
+1. Log into Github and locate [Github Repository](https://github.com/KlaraMartinsson/hangman-game).
+2. After creating a Heroku account, click "New" to create a new app from the dashboard.
+3. Create a unique name for the app and select your region: press "Create app".
+4. Go to settings and add the necessary Config_vars and buildpacks. Ensure that the buildpacks are set to `Python` and `NodeJS`.
+5. Click the `Deploy Branch`.
+6. Scroll Down to Deployment Method and select GitHub.
+7. Select the name of the repository from Github to be deployed and connect to Heroku.
+8. Scroll down to deploy: 
+The first option is selecting Automatic deploys (Will Update Automatically with every "git push"). This was chosen for this project.
