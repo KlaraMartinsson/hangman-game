@@ -79,6 +79,10 @@ class Hangman:
         else:
             print("Incorrect")
 
+    def word_complete(self):
+        if "_" not in self.secret_word:
+            return True
+
 
 def main():
     print("Welcome to hangman!")
@@ -116,5 +120,5 @@ def main():
             print("You win!")
             break
 
-        
+
 main()
