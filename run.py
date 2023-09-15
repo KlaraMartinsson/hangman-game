@@ -106,6 +106,8 @@ class Hangman:
         """
         if data not in self.word:
             self.tries -= 1
+            print(
+                f"That was incorrect, you have {self.tries} more chances to guess wrong.")
 
         while data in self.word:
             i = self.word.index(data)
