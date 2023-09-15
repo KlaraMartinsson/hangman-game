@@ -110,12 +110,12 @@ class Hangman:
         if "_" not in self.secret_word:
             self.start_game()
             return True
-    
+ 
     def check_tries(self):
         if self.tries <= 0:
             self.start_game()
             return True
-    
+ 
     def play_again(self):
         while True:
             restart = input("Do you want to play again? (Y/N): \n").upper()
@@ -125,7 +125,7 @@ class Hangman:
                 return False
             else: 
                 print("Invalid choice. Please enter 'Y' or 'N'.")
-                
+
 def main():
     print(word_art.welcome)
     name = input("Enter your name: \n").capitalize()
@@ -165,6 +165,7 @@ def main():
         word_input = random.choice(words_3).upper()
 
     player = Hangman(name, word_input)
+    
     while True:  # Makes the game running until word is completed.
         player.start_game()
         player.guess_letter()
@@ -173,9 +174,11 @@ def main():
             break
         if player.check_tries():
             print("You lose!")
-            restart = input("Do you want to try again?")
             break
-    if :
+
+    if player.play_again():
         main()
+        print("Thanks for playing!")
+
 
 main()
