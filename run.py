@@ -25,7 +25,6 @@ def game_rules(data):
         print("..the closer you are to lose.\n")
         print("6. You lose the game after 6 wrong guesses.\n")
         print("=======================================================")
-        print("\n")
         return True
     elif data == "N":
         return True
@@ -216,6 +215,7 @@ def main():
             break
 
     if player.play_again():
+        clear_terminal()
         main()
 
 
