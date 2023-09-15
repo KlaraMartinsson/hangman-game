@@ -195,7 +195,7 @@ def main():
             print("You win!")
             break
         if player.check_tries():
-            print("You lose!")
+            print(f"You lose! The word was: {word_input}")
             break
 
     if player.play_again():
