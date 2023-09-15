@@ -82,7 +82,7 @@ class Hangman:
         If validate_guess function comes back as false player get to guess the letter again, otherwise the loop breaks.
         """
         while True:
-            guess = input("Guess a letter: ").upper()
+            guess = input("Guess a letter: \n").upper()
             if self.validate_guess(guess):
                 break
         self.guesses.append(guess)  # Guessed letter goes into the list guesses
@@ -115,10 +115,20 @@ class Hangman:
         if self.tries <= 0:
             self.start_game()
             return True
-
+    
+    def play_again(self):
+        while True:
+            restart = input("Do you want to play again? (Y/N): \n").upper()
+            if restart == "Y":
+                return True
+            if restart == "N":
+                return False
+            else: 
+                print("Invalid choice. Please enter 'Y' or 'N'.")
+                
 def main():
     print(word_art.welcome)
-    name = input("Enter your name: ").capitalize()
+    name = input("Enter your name: \n").capitalize()
     print(name)
 
     global rules_input
@@ -140,7 +150,7 @@ def main():
     """
     while True:
         print("Choose a lvl between 1-3")
-        lvl_input = input("Choose lvl: ")
+        lvl_input = input("Choose lvl: \n")
         if validate_lvl(lvl_input):
             break
 
@@ -163,6 +173,9 @@ def main():
             break
         if player.check_tries():
             print("You lose!")
+            restart = input("Do you want to try again?")
             break
+    if :
+        main()
 
 main()
