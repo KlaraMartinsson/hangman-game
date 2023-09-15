@@ -73,6 +73,7 @@ class Hangman:
         self.secret_word = len(self.word)*["_"]
 
     def start_game(self):
+        clear_terminal()
         print(hangman_stages(self.tries))
         print(*self.secret_word)
         print(*self.guesses)
