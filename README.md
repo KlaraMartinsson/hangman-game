@@ -24,3 +24,37 @@ I was using a Flowchart to plan out how the code should work. My thoughts while 
 - Where should it be inputs from the user?
 - How do I deal with incorrect input?
 ![Design FlowChart](documentation/screenshots/hangman_flowchart.JPG)
+
+## Headings
+I used graphics from [Fancy text pro](https://www.fancytextpro.com/) to make the welcome and game rules headings.
+
+## Features
+* Start of the game
+    * Welcomes the player.
+    * Ask's to enter the player's name.
+    * Ask's if the player want's to read the rules.
+
+![Image of the start](documentation/screenshots/read_rules.JPG)
+
+* Game rules
+    * Explains how to play the game.
+    * Explains the rules of the game.
+    * When scrolling down in the terminal, the player get's asked to choose level of difficulty. From 1-3, "1" is easy, "2" is medium and "3" is hard.
+
+![Image of the game rules](documentation/screenshots/game_rules.JPG)
+
+* The game starts
+    * The hangman is displayed.
+    * The word is hidden by "_" for every secret letter.
+    * Under the hidden word the letters guessed shows up. 
+    * The user get's to guess letters until they finish the word or until they or out of their 6 chances of guessing wrong and the hangman is hangd. 
+
+![Image of the game](documentation/screenshots/the_game.JPG)
+
+* The player wins/loses
+    * The player get's to know the secret word. 
+    * The player get's asked if they want to play again.
+    * If they want to play again it takes them to the beginning of the game.
+    * If they dont want to play again a "Thank your for playing!" message shows up.
+
+![Image of winning](documentation/screenshots/the_game.JPG) ![Image of losing](documentation/screenshots/the_game.JPG)
