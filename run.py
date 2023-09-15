@@ -108,7 +108,6 @@ class Hangman:
             self.secret_word[i] = data
             self.word[i] = "."
             print(*self.secret_word)
-            print(self.word)
 
     def word_complete(self):
         """
