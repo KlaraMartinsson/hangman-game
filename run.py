@@ -33,9 +33,10 @@ class Hangman:
         self.secret_word = len(self.word)*["_"] # Takes the lenght of the word & place an: _ for every letter.
 
     def start_game(self):
-        print(f"Let's start the game {self.name}. Word to guess is\n{self.word}")
-        print(self.secret_word)
-        print(self.guesses)
+        print(f"Word to guess is\n{self.word}")
+        print(hangman[6])
+        print(*self.secret_word)
+        print(*self.guesses)
     
     
     def validate_guess(self, data):
@@ -49,9 +50,9 @@ class Hangman:
             if len(data) != 1:
                 raise ValueError(f"You can only guess one letter at a time. You guessed: {data}")
             if data in self.guesses:
-                raise ValueError(f"You already guessed {data}.")
+                raise ValueError(f"You already guessed: {data}")
         except ValueError as e:
-            print("Invalid input: {e}. Please try again.")
+            print(f"Invalid input: {e}. Please try again.")
             return False
         return True
 
@@ -76,8 +77,7 @@ class Hangman:
             print("Correct")
             index = self.word.index(data)
             self.secret_word[index] = data
-            print(self.secret_word)
-
+            print(*self.secret_word)
         else:
             print("Incorrect")
 

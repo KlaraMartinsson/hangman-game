@@ -1,3 +1,4 @@
+def hangman_stages(tries):
 hangman = [
     """
     __________
@@ -70,3 +71,4 @@ hangman = [
     --------------- 
     """
 ]
+return hangman[tries]
