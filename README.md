@@ -17,3 +17,10 @@ As a user I want:
 
 ### Project Goals
 As a programmer of the game, I want the user to meet their goals (above). I also want the game to run smoothly with no bugs.
+
+## Flowchart
+I was using a Flowchart to plan out how the code should work. My thoughts while doing this was:
+- How should the game start?
+- Where should it be inputs from the user?
+- How do I deal with incorrect input?
+![Design FlowChart](documentation/screenshots/hangman_flowchart.JPG)
