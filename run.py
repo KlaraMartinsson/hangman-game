@@ -9,12 +9,11 @@ from hangman_stages import hangman_stages
 def game_rules(data):
     if data == "Y":
         print(word_art.rules_style)
-        print("Try to find out what the secret word is by guessing letters.")
-        print("You can only guess one letter at a time.\n")
-        print("If you guess correctly the letter will appear in the word.")
+        print("1. You can only guess one letter at a time.\n")
+        print("2. If you guess correctly the letter will appear in the word.")
         print("W_RD\n")
-        print("If you guess all the letters correctly in the word, you win.\n")
-        print("If you guess incorrect a body part goes on Hangman.")
+        print("3. If you guess all the letters in the word, you win.\n")
+        print("4. If you guess incorrect a body part goes on Hangman.")
         print("If you guess wrong 6 times you hang your Hangman and lose.\n")
         return True
     elif data == "N":
@@ -112,7 +111,7 @@ class Hangman:
 
 
 def main():
-    print("Welcome to hangman!")
+    print(word_art.welcome)
     name = input("Enter your name: ").capitalize()
     print(name)
 
