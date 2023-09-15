@@ -1,4 +1,8 @@
 words_1 = [
+    'hejj',
+    'vaaa'
+]
+"""
     'human',
     'computer',
     'car',
@@ -12,8 +16,7 @@ words_1 = [
     'couple',
     'visit',
     'peace'
-]
-
+"""
 words_2 = [
     'beautiful',
     'reveal',

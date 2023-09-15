@@ -7,6 +7,9 @@ from hangman_stages import hangman_stages
 
 
 def game_rules(data):
+    """
+    Checks if player want's to read the rules. If not the game continues.
+    """
     if data == "Y":
         print(word_art.rules_style)
         print("1. You can only guess one letter at a time.\n")
@@ -51,13 +54,11 @@ class Hangman:
         self.tries = 6
         self.secret_word = len(self.word)*["_"]  # Takes the lenght of the word & place an: _ for every letter.
 
-
     def start_game(self):
         print(f"Word to guess is\n{self.word}")
         print(hangman_stages(self.tries))
         print(*self.secret_word)
         print(*self.guesses)
-
 
     def validate_guess(self, data):
         """
@@ -107,8 +108,13 @@ class Hangman:
         If so the word is completed, otherwise the player gets to keep on guessing.
         """
         if "_" not in self.secret_word:
+            self.start_game()
             return True
-
+    
+    def check_tries(self):
+        if self.tries <= 0:
+            self.start_game()
+            return True
 
 def main():
     print(word_art.welcome)
@@ -120,7 +126,7 @@ def main():
     global word_input
 
     """
-    Gets input if player want's to read rules. Calls the function 
+    Gets input if player want's to read rules. Calls the function
     game_rules to either give rules or not.
     """
     while True:
@@ -155,6 +161,8 @@ def main():
         if player.word_complete():
             print("You win!")
             break
-
+        if player.check_tries():
+            print("You lose!")
+            break
 
 main()
