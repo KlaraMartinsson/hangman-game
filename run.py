@@ -48,6 +48,8 @@ class Hangman:
                 raise ValueError(f"You can only guess letters. You guessed: {data}")
             if len(data) != 1:
                 raise ValueError(f"You can only guess one letter at a time. You guessed: {data}")
+            if data in self.guesses:
+                raise ValueError(f"You already guessed {data}.")
         except ValueError as e:
             print("Invalid input: {e}. Please try again.")
             return False
@@ -80,6 +82,10 @@ class Hangman:
             print("Incorrect")
 
     def word_complete(self):
+        """
+        Checks if the word doesn't have any "_" in it. 
+        If so the word is completed, otherwise the player gets to keep on guessing.
+        """
         if "_" not in self.secret_word:
             return True
 
@@ -113,7 +119,7 @@ def main():
         word_input = random.choice(words_3).upper()   
 
     player = Hangman(name, word_input) 
-    while True:
+    while True: # Makes the game running until word is completed.
         player.start_game()
         player.guess_letter()
         if player.word_complete():
