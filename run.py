@@ -5,11 +5,20 @@ from words import words_1, words_2, words_3
 from hangman_stages import hangman_stages
 
 
+def clear_terminal():
+    """
+    Clears the terminal.
+    """
+    # From:
+    # https://stackoverflow.com/questions/2084508/clear-terminal-in-python
+
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 def game_rules(data):
     """
     Checks if player want's to read the rules. If not the game continues.
     """
-    clear_terminal()
     if data == "Y":
         print(word_art.rules_style)
         print("=======================================================")
@@ -30,16 +39,6 @@ def game_rules(data):
         return True
     else:
         print("Invalid choice. Please enter 'Y' or 'N'.")
-
-
-def clear_terminal():
-    """
-    Clears the terminal.
-    """
-    # From:
-    # https://stackoverflow.com/questions/2084508/clear-terminal-in-python
-
-    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def validate_level(data):
@@ -73,7 +72,6 @@ class Hangman:
         self.secret_word = len(self.word)*["_"]
 
     def start_game(self):
-        clear_terminal()
         print(hangman_stages(self.tries))
         print(*self.secret_word)
         print(*self.guesses)
@@ -111,7 +109,6 @@ class Hangman:
         self.guesses.append(guess)
         # Calls the function check_letter with the input from the player
         self.check_letter(guess)
-        clear_terminal()
 
     def check_letter(self, data):
         """
@@ -189,7 +186,6 @@ def main():
         print("Now you have to choose a level between 1-3.\n")
         level_input = input("Choose level: \n")
         if validate_level(level_input):
-            clear_terminal()
             break
 
     """
