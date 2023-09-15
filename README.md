@@ -89,6 +89,10 @@ I used my school Code Institutes own validator https://pep8ci.herokuapp.com/ to 
         - To make a flowchart for preparation to project.
     * Fancy text pro
         - To make word art. 
+## Bugs
+### Fixed bugs
+* On error that I had was when guessing a letter in lowercase, I got an error message saing it is invalid input. I fixed this by using the .upper() method on the input for guessing a letter. So if I guess with lowercase my guess becomes uppercase and that resulted in no error message.
+![Error image](documentation/bugs/)
 
 ## Deployment
  The app was deployed through Heroku. The steps are as following:
