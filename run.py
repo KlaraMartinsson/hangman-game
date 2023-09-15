@@ -28,12 +28,14 @@ class Hangman:
     def __init__(self, name, word):
         self.name = name
         self.word = word
-        self.guesses = [] #Holds the guessed letters
+        self.guesses = []  # Holds the guessed letters
         self.tries = 6 
-        self.secret_word = len(self.word)*["_"] #Takes the lenght of the word and place an: _ for every letter.
+        self.secret_word = len(self.word)*["_"] # Takes the lenght of the word & place an: _ for every letter.
 
     def start_game(self):
         print(f"Let's start the game {self.name}. Word to guess is\n{self.word}")
+        print(self.secret_word)
+        print(self.guesses)
     
     
     def validate_guess(self, data):
@@ -65,10 +67,15 @@ class Hangman:
 
     def check_letter(self, data):
         """
-        Checks if the guessed letter is in the word or not.
+        Checks if the guessed letter is in the word or not. 
+        Returns the index of the first item that is equal to data.
         """
         if data in self.word:
             print("Correct")
+            index = self.word.index(data)
+            self.secret_word[index] = data
+            print(self.secret_word)
+
         else:
             print("Incorrect")
 
