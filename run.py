@@ -13,11 +13,11 @@ def game_rules(data):
     if data == "Y":
         print(word_art.rules_style)
         print("1. You can only guess one letter at a time.\n")
-        print("You have 3 diffrent levels of difficulity:")
-        print("\n'1' for easy, '2' for medium and '3' for hard.")
-        print("\n2. If you guess correct the letter will appear in the word.")
-        print("\n3. If you guess all the letters in the word, you win.\n")
-        print("\n4. If you guess incorrect a body part goes on Hangman.")
+        print("2. You have 3 diffrent levels of difficulity:")
+        print("'1' for easy, '2' for medium and '3' for hard.\n")
+        print("3. If you guess correct the letter will appear in the word.\n")
+        print("4. If you guess all the letters in the word, you win.\n")
+        print("5. If you guess incorrect a body part goes on Hangman.")
         print("If you guess wrong 6 times you hang your Hangman and lose.\n")
         return True
     elif data == "N":
