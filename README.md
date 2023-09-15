@@ -57,4 +57,4 @@ I used graphics from [Fancy text pro](https://www.fancytextpro.com/) to make the
     * If they want to play again it takes them to the beginning of the game.
     * If they dont want to play again a "Thank your for playing!" message shows up.
 
-![Image of winning](documentation/screenshots/the_game.JPG) ![Image of losing](documentation/screenshots/the_game.JPG)
+![Image of winning](documentation/screenshots/win.JPG) ![Image of losing](documentation/screenshots/fail.JPG)
