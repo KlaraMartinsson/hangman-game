@@ -167,13 +167,13 @@ def main():
     Picks a list with random words choosed by
     player depending of lvl difficulty.
     """
-    if lvl_input == "1":
-        word_input = random.choice(words_1).upper()
-    elif lvl_input == "2":
-        word_input = random.choice(words_2).upper()
-    elif lvl_input == "3":
-        word_input = random.choice(words_3).upper()
-
+    level_words = {
+        "1": words_1,
+        "2": words_2,
+        "3": words_3
+    }
+    word_input = random.choice(level_words[lvl_input]).upper()
+    
     player = Hangman(name, word_input)
 
     while True:  # Makes the game running until word is completed.
