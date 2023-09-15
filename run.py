@@ -13,8 +13,9 @@ def game_rules(data):
     if data == "Y":
         print(word_art.rules_style)
         print("1. You can only guess one letter at a time.\n")
+        print("You have 3 diffrent levels of difficulity:")
+        print("'1' for easy, '2' for medium and '3' for hard.")
         print("2. If you guess correctly the letter will appear in the word.")
-        print("W_RD\n")
         print("3. If you guess all the letters in the word, you win.\n")
         print("4. If you guess incorrect a body part goes on Hangman.")
         print("If you guess wrong 6 times you hang your Hangman and lose.\n")
@@ -38,7 +39,7 @@ def validate_level(data):
         if int(data) > 3:
             raise ValueError(f"Maximum level is 3. You entered: {data}")
     except ValueError as e:
-        print(f"Invalid input: {e}. Please try again.")
+        print(f"Invalid input: {e}. Please try again.\n")
         return False
     return True
 
