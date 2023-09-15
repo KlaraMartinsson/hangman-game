@@ -109,6 +109,12 @@ def main():
         word_input = random.choice(words_3).upper()   
 
     player = Hangman(name, word_input) 
-    player.start_game()
-    player.guess_letter()
+    while True:
+        player.start_game()
+        player.guess_letter()
+        if player.word_complete():
+            print("You win!")
+            break
+
+        
 main()
