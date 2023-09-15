@@ -13,7 +13,7 @@ def game_rules(data):
     if data == "Y":
         print(word_art.rules_style)
         print("1. You have 3 diffrent levels of difficulity:")
-        print("'1' for easy, '2' for medium and '3' for hard.")
+        print("'1' for easy, '2' for medium and '3' for hard.\n")
         print("The levels are based on how hard it is to guess the word.")
         print("For each level the words get longer and more uncommon.\n")
         print("2. You can only guess one letter at a time.\n")
@@ -21,8 +21,8 @@ def game_rules(data):
         print("4. If you guess all the letters in the word, you win.\n")
         print("5. If you guess incorrect a body part adds to Hangman.")
         print("The more body parts the Hangman have..")
-        print("the closer you are to lose.\n")
-        print("If you guess wrong 6 times you hang your Hangman and lose.\n")
+        print("..the closer you are to lose.\n")
+        print("After 6 wrong guesses your Hangman hangs and you lose the game.\n")
         return True
     elif data == "N":
         return True
@@ -81,7 +81,7 @@ class Hangman:
             if data in self.guesses:
                 raise ValueError(f"You already guessed: {data}")
         except ValueError as e:
-            print(f"Invalid input: {e}. Please try again.")
+            print(f"Invalid input: {e}. Please try again.\n")
             return False
         return True
 
@@ -142,7 +142,12 @@ class Hangman:
 
 def main():
     print(word_art.welcome)
-    name = input("Enter your name: \n").capitalize()
+    while True:
+        name = input("Enter your name: \n").capitalize()
+        if not name.isalpha():
+            print(f'Invalid name, try again.\n')
+        else:
+            break
 
     global rules_input
     global level_input
@@ -163,7 +168,7 @@ def main():
     If False player get to choose level again.
     """
     while True:
-        print("Choose a level between 1-3")
+        print("Choose a level between 1-3\n")
         level_input = input("Choose level: \n")
         if validate_level(level_input):
             break
