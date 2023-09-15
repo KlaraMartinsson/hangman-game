@@ -208,10 +208,12 @@ def main():
         player.start_game()
         player.guess_letter()
         if player.word_complete():
+            clear_terminal()
             print(word_art.win)
             print(f"You win! The word was: {word_input}\n")
             break
         if player.check_tries():
+            clear_terminal()
             print(word_art.lose)
             print(f"You lose! The word was: {word_input}\n")
             break
