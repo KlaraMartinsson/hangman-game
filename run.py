@@ -4,9 +4,26 @@ from words import words_2
 from words import words_3
 from hangman_stages import hangman_stages
 
+
 def game_rules(data):
     if data == "Y":
-        print("This is the rules")
+        rules_style = '''
+   _____          __  __ ______   _____  _    _ _      ______  _____ 
+  / ____|   /\   |  \/  |  ____| |  __ \| |  | | |    |  ____|/ ____|
+ | |  __   /  \  | \  / | |__    | |__) | |  | | |    | |__  | (___  
+ | | |_ | / /\ \ | |\/| |  __|   |  _  /| |  | | |    |  __|  \___ \ 
+ | |__| |/ ____ \| |  | | |____  | | \ \| |__| | |____| |____ ____) |
+  \_____/_/    \_\_|  |_|______| |_|  \_\\____/|______|______|_____/                                                      
+        '''
+        print(rules_style)
+        print("Try to find out what the secret word is by guessing letters.")
+        print("You can only guess one letter at a time.\n")
+        print("If you guess correctly the letter will appear in the word.")
+        print("W_RD\n")
+        print("If you guess all the letters correctly in the word, you win.\n")
+        print("If you guess incorrect a body part goes on Hangman.")
+        print("If you guess wrong 6 times you hang your Hangman and lose.\n")
+        return True
     elif data == "N":
         print("This is not the rules")
         return True
@@ -115,7 +132,7 @@ def main():
     game_rules to either give rules or not.
     """
     while True:
-        rules_input = input(f"Hello, {name}, do you want to read the rules? (Y/N): ").upper()
+        rules_input = input(f"Hello, {name}, do you want to read the rules? (Y/N): \n").upper()
         if game_rules(rules_input):
             break
 
