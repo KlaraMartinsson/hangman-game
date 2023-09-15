@@ -4,6 +4,7 @@ from words import words_2
 from words import words_3
 from hangman_stages import hangman_stages
 
+
 def validate_lvl(data):
     """
     Validates the level the player choose.
