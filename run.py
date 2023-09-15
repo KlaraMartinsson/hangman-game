@@ -4,6 +4,15 @@ from words import words_2
 from words import words_3
 from hangman_stages import hangman_stages
 
+def game_rules(data):
+    if data == "Y":
+        print("This is the rules")
+    elif data == "N":
+        print("This is not the rules")
+        return True
+    else:
+        print("Invalid choice. Please enter 'Y' or 'N'.")
+
 
 def validate_lvl(data):
     """
@@ -33,11 +42,13 @@ class Hangman:
         self.tries = 6
         self.secret_word = len(self.word)*["_"]  # Takes the lenght of the word & place an: _ for every letter.
 
+
     def start_game(self):
         print(f"Word to guess is\n{self.word}")
         print(hangman_stages(self.tries))
         print(*self.secret_word)
         print(*self.guesses)
+
 
     def validate_guess(self, data):
         """
@@ -95,8 +106,18 @@ def main():
     name = input("Enter your name: ").capitalize()
     print(name)
 
+    global rules_input
     global lvl_input
     global word_input
+
+    """
+    Gets input if player want's to read rules. Calls the function 
+    game_rules to either give rules or not.
+    """
+    while True:
+        rules_input = input(f"Hello, {name}, do you want to read the rules? (Y/N): ").upper()
+        if game_rules(rules_input):
+            break
 
     """
     Checks the validate_lvl function if True the while loop breaks.
