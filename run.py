@@ -25,7 +25,7 @@ def game_rules(data):
         print("Invalid choice. Please enter 'Y' or 'N'.")
 
 
-def validate_lvl(data):
+def validate_level(data):
     """
     Validates the level the player choose.
     """
@@ -34,9 +34,9 @@ def validate_lvl(data):
             raise ValueError(
                 f"You need to enter a whole number. You entered: {data}")
         if int(data) < 1:
-            raise ValueError(f"Minimum lvl is 1. You entered: {data}")
+            raise ValueError(f"Minimum level is 1. You entered: {data}")
         if int(data) > 3:
-            raise ValueError(f"Maximum lvl is 3. You entered: {data}")
+            raise ValueError(f"Maximum level is 3. You entered: {data}")
     except ValueError as e:
         print(f"Invalid input: {e}. Please try again.")
         return False
@@ -140,7 +140,7 @@ def main():
     name = input("Enter your name: \n").capitalize()
 
     global rules_input
-    global lvl_input
+    global level_input
     global word_input
 
     """
@@ -154,26 +154,26 @@ def main():
             break
 
     """
-    Checks the validate_lvl function if True the while loop breaks.
-    If False player get to choose lvl again.
+    Checks the validate_level function if True the while loop breaks.
+    If False player get to choose level again.
     """
     while True:
-        print("Choose a lvl between 1-3")
-        lvl_input = input("Choose lvl: \n")
-        if validate_lvl(lvl_input):
+        print("Choose a level between 1-3")
+        level_input = input("Choose level: \n")
+        if validate_level(level_input):
             break
 
     """
     Picks a list with random words choosed by
-    player depending of lvl difficulty.
+    player depending of level difficulty.
     """
     level_words = {
         "1": words_1,
         "2": words_2,
         "3": words_3
     }
-    word_input = random.choice(level_words[lvl_input]).upper()
-    
+    word_input = random.choice(level_words[level_input]).upper()
+
     player = Hangman(name, word_input)
 
     while True:  # Makes the game running until word is completed.
