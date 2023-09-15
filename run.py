@@ -32,7 +32,8 @@ def validate_lvl(data):
     """
     try:
         if data.isalpha():
-            raise ValueError(f"You need to enter a whole number. You entered: {data}")
+            raise ValueError(
+        f"You need to enter a whole number. You entered: {data}")
         if int(data) < 1:
             raise ValueError(f"Minimum lvl is 1. You entered: {data}")
         if int(data) > 3:
@@ -49,10 +50,11 @@ class Hangman:
     """
     def __init__(self, name, word):
         self.name = name
-        self.word = word
+        self.word = [x for x in word]
         self.guesses = []  # Holds the guessed letters
         self.tries = 6
-        self.secret_word = len(self.word)*["_"]  # Takes the lenght of the word & place an: _ for every letter.
+        self.secret_word = len(self.word)*["_"]  
+        # Takes the lenght of the word & place an: _ for every letter.
 
     def start_game(self):
         print(f"Word to guess is\n{self.word}")
@@ -67,9 +69,11 @@ class Hangman:
         """
         try:
             if not data.isalpha():
-                raise ValueError(f"You can only guess letters. You guessed: {data}")
+                raise ValueError(
+            f"You can only guess letters. You guessed: {data}")
             if len(data) != 1:
-                raise ValueError(f"You can only guess one letter at a time. You guessed: {data}")
+                raise ValueError(
+            f"You can only guess one letter at a time. You guessed: {data}")
             if data in self.guesses:
                 raise ValueError(f"You already guessed: {data}")
         except ValueError as e:
@@ -79,43 +83,51 @@ class Hangman:
 
     def guess_letter(self):
         """
-        If validate_guess function comes back as false player get to guess the letter again, otherwise the loop breaks.
+        If validate_guess function comes back as false player get to 
+        guess the letter again, otherwise the loop breaks.
         """
+        print(self.word)
         while True:
             guess = input("Guess a letter: \n").upper()
-            if self.validate_guess(guess):
+            if self.validate_guess(guess): 
                 break
-        self.guesses.append(guess)  # Guessed letter goes into the list guesses
-        self.check_letter(guess)  # Calls the function check_letter with the input from the player
+        self.guesses.append(guess)  
+        # Guessed letter goes into the list guesses
+        self.check_letter(guess)  
+        # Calls the function check_letter with the input from the player
 
     def check_letter(self, data):
         """
         Checks if the guessed letter is in the word or not.
         Returns the index of the first item that is equal to data.
         """
-        if data in self.word:
-            print("Correct")
-            index = self.word.index(data)
-            self.secret_word[index] = data
-            print(*self.secret_word)
-        else:
+        if data not in self.word:
             print("Incorrect")
             self.tries -= 1
+        
+        while data in self.word:
+            print("Correct")
+            i = self.word.index(data)
+            self.secret_word[i] = data
+            self.word[i] = "."
+            print(*self.secret_word)
+            print(self.word)
 
     def word_complete(self):
         """
         Checks if the word doesn't have any "_" in it.
-        If so the word is completed, otherwise the player gets to keep on guessing.
+        If so the word is completed, otherwise the player 
+        gets to keep on guessing.
         """
         if "_" not in self.secret_word:
             self.start_game()
             return True
- 
+
     def check_tries(self):
         if self.tries <= 0:
             self.start_game()
             return True
- 
+
     def play_again(self):
         while True:
             restart = input("Do you want to play again? (Y/N): \n").upper()
@@ -125,6 +137,7 @@ class Hangman:
                 return False
             else: 
                 print("Invalid choice. Please enter 'Y' or 'N'.")
+
 
 def main():
     print(word_art.welcome)
@@ -140,7 +153,8 @@ def main():
     game_rules to either give rules or not.
     """
     while True:
-        rules_input = input(f"Hello, {name}, do you want to read the rules? (Y/N): \n").upper()
+        rules_input = input(
+            f"Hello, {name}, do you want to read the rules? (Y/N): \n").upper()
         if game_rules(rules_input):
             break
 
@@ -155,7 +169,8 @@ def main():
             break
 
     """
-    Picks a list with random words choosed by player depending of lvl difficulty.
+    Picks a list with random words choosed by 
+    player depending of lvl difficulty.
     """
     if lvl_input == "1":
         word_input = random.choice(words_1).upper()
@@ -165,7 +180,7 @@ def main():
         word_input = random.choice(words_3).upper()
 
     player = Hangman(name, word_input)
-    
+
     while True:  # Makes the game running until word is completed.
         player.start_game()
         player.guess_letter()
