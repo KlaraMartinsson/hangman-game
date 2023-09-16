@@ -1,6 +1,6 @@
 # Hangman game
 ![Image of website](documentation/screenshots/hangman_firstpage.JPG)
-[Link to live site]
+[Link to live site](https://klaras-hangman-9d12372b114c.herokuapp.com/)
 
 The Hangman game is a Python terminal game deployed to Heroku. The goal of this game is to guess the secret word with one letter at a time. If the player guess it's wrong to many times the man hangs. If the player guess the word the man survives.
 
@@ -103,11 +103,11 @@ I used my school Code Institutes own validator https://pep8ci.herokuapp.com/ to 
 2. After creating a Heroku account, click "New" to create a new app from the dashboard.
 3. Create a unique name for the app and select your region: press "Create app".
 4. Go to settings and add the necessary Config_vars and buildpacks. Ensure that the buildpacks are set to `Python` and `NodeJS`.
-5. Click the `Deploy Branch`.
+5. Click `Deploy`.
 6. Scroll Down to Deployment Method and select GitHub.
 7. Select the name of the repository from Github to be deployed and connect to Heroku.
-8. Scroll down to deploy: 
-The first option is selecting Automatic deploys (Will Update Automatically with every "git push"). This was chosen for this project.
+8. Scroll down to the deploy options: 
+Click enable Automatic deploys (Will Update Automatically with every "git push"). This was chosen for this project.
 
 ## Credits
 ### Code
