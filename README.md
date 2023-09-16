@@ -34,7 +34,7 @@ I used graphics from [Fancy text pro](https://www.fancytextpro.com/) to make the
     * Ask's to enter the player's name.
     * Ask's if the player want's to read the rules.
 
-![Image of the start](documentation/screenshots/read_rules.JPG)
+![Image of the start](documentation/screenshots/hangman_firstpage.JPG)
 
 * Game rules
     * Explains how to play the game.
