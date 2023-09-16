@@ -92,7 +92,9 @@ I used my school Code Institutes own validator https://pep8ci.herokuapp.com/ to 
 ## Bugs
 ### Fixed bugs
 * On error that I had was when guessing a letter in lowercase, I got an error message saing it is invalid input. I fixed this by using the .upper() method on the input for guessing a letter. So if I guess with lowercase my guess becomes uppercase and that resulted in no error message.
-![Error image](documentation/bugs/)
+![Error letter image](documentation/bugs/error_letter.JPG)
+* Another bug I had was that my data who where a string needed to become an integrer. So I solved this by changing the code to int(data).
+![Error lvl image](documentation/bugs/error_lvl.JPG)
 
 ## Deployment
  The app was deployed through Heroku. The steps are as following:
@@ -106,3 +108,13 @@ I used my school Code Institutes own validator https://pep8ci.herokuapp.com/ to 
 7. Select the name of the repository from Github to be deployed and connect to Heroku.
 8. Scroll down to deploy: 
 The first option is selecting Automatic deploys (Will Update Automatically with every "git push"). This was chosen for this project.
+
+## Credits
+### Code
+I learned how to use word art from [Patthoeges](https://github.com/patthoege/hangmangame-pp3-python) gihub. 
+I used wordart from [Fancy text pro](https://www.fancytextpro.com/BigTextGenerator?fbclid=IwAR0TsTKLRY91w8ggGxdgfZp6Cu-R4HP2SjAemqdaCRtT86b_tIwp-WeF3u8).
+I learned about how to clear the terminal window from Stack Overflows [thread](https://stackoverflow.com/questions/2084508/clear-terminal-in-python).
+
+### Acknowledgements
+Thanks to my mentor [Oluwaseun Owonikoko](https://github.com/seunkoko) for advising me.
+Thank to my family for trying out the game.
