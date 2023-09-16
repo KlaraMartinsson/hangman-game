@@ -19,7 +19,6 @@ def game_rules(data):
     """
     Checks if player want's to read the rules. If not the game continues.
     """
-    clear_terminal()
     if data == "Y":
         print(word_art.rules_style)
         print("=======================================================")
@@ -103,7 +102,7 @@ class Hangman:
         guess the letter again, otherwise the loop breaks.
         """
         while True:
-            guess = input("Guess a letter: \n").upper()
+            guess = input("Guess a letter: ").upper()
             if self.validate_guess(guess):
                 break
         # Guessed letter goes into the list guesses
@@ -119,13 +118,16 @@ class Hangman:
         if data not in self.word:
             self.tries -= 1
             print(
-                f"That was incorrect, {self.tries} more tries to guess wrong.")
+                f"\n\n\n\nThat was incorrect, you have {self.tries}"
+                " more tries to guess wrong.")
 
         while data in self.word:
             i = self.word.index(data)
             self.secret_word[i] = data
             self.word[i] = "."
-            print(*self.secret_word)
+            print(
+                f"\n\n\n\nThat was correct! You have {self.tries}"
+                " more tries to guess wrong.")
 
     def word_complete(self):
         """
@@ -144,7 +146,7 @@ class Hangman:
 
     def play_again(self):
         while True:
-            restart = input("Do you want to play again? (Y/N): \n").upper()
+            restart = input("Do you want to play again? (Y/N): ").upper()
             if restart == "Y":
                 return True
             if restart == "N":
@@ -159,12 +161,13 @@ def main():
     print("WELCOME TO THE GAME HANGMAN!")
     print("============================")
     while True:
-        name = input("Enter your name: \n").capitalize()
+        name = input("Enter your name: ").capitalize()
         if not name.isalpha():
             print(f'Invalid name, try again.\n')
         else:
             break
 
+    clear_terminal()
     global rules_input
     global level_input
     global word_input
@@ -175,7 +178,7 @@ def main():
     """
     while True:
         rules_input = input(
-            f"Hello, {name}! Do you want to read the rules? (Y/N): \n").upper()
+            f"Hello, {name}! Do you want to read the rules? (Y/N): ").upper()
         if game_rules(rules_input):
             break
 
@@ -185,7 +188,7 @@ def main():
     """
     while True:
         print("Now you have to choose a level between 1-3.\n")
-        level_input = input("Choose level: \n")
+        level_input = input("Choose level: ")
         if validate_level(level_input):
             break
 
@@ -202,7 +205,7 @@ def main():
 
     player = Hangman(name, word_input)
 
-    while True:  # Makes the game running until word is completed.
+    while True:  # Keeps the game running until word is completed.
         player.start_game()
         player.guess_letter()
         if player.word_complete():

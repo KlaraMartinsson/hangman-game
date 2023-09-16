@@ -101,7 +101,7 @@ I used my school Code Institutes own validator https://pep8ci.herokuapp.com/ to 
 * Another bug I had was that my data who where a string needed to become an integrer. So I solved this by changing the code to int(data).
 ![Error lvl image](documentation/bugs/error_lvl.JPG)
 ### Remaining bugs
-* None currently known.
+* clear_terminal() function doesn't clear the whole terminal
 
 ## Deployment
  The app was deployed through Heroku. The steps are as following:
@@ -118,9 +118,9 @@ Click enable Automatic deploys (Will Update Automatically with every "git push")
 
 ## Credits
 ### Code
-I learned how to use word art from [Patthoeges](https://github.com/patthoege/hangmangame-pp3-python) gihub. 
-I used wordart from [Fancy text pro](https://www.fancytextpro.com/BigTextGenerator?fbclid=IwAR0TsTKLRY91w8ggGxdgfZp6Cu-R4HP2SjAemqdaCRtT86b_tIwp-WeF3u8).
-I learned about how to clear the terminal window from Stack Overflows [thread](https://stackoverflow.com/questions/2084508/clear-terminal-in-python).
+* I learned how to use word art from [Patthoeges](https://github.com/patthoege/hangmangame-pp3-python) gihub. 
+* I used wordart from [Fancy text pro](https://www.fancytextpro.com/BigTextGenerator?fbclid=IwAR0TsTKLRY91w8ggGxdgfZp6Cu-R4HP2SjAemqdaCRtT86b_tIwp-WeF3u8).
+* I learned about how to clear the terminal window from Stack Overflows [thread](https://stackoverflow.com/questions/2084508/clear-terminal-in-python).
 
 ### Acknowledgements
 Thanks to my mentor [Oluwaseun Owonikoko](https://github.com/seunkoko) for advising me.
