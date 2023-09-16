@@ -71,11 +71,12 @@ I used graphics from [Fancy text pro](https://www.fancytextpro.com/) to make the
 ### Manual testing
 I been testing the code many times by my own in the local terminal and in the mock terminal on the deployed site Heroku.
 - Tried to put invalid input.
+![image of invalid input](documentation/bugs/error_messages.JPG)
 - Navigated through the whole game while trying out diffrent of options.
 My family and my mentor [Oluwaseun Owonikoko](https://github.com/seunkoko) have also been testing it.
 ### Automated testing
 I used my school Code Institutes own validator https://pep8ci.herokuapp.com/ to check the code automated. I tested run.py, words.py, word_art.py and hangman_stages.py and the code had no errors or warnings in it.
-![Image of validator](documentation/screenshots/no_errors.JPG)
+![Image of validator](documentation/bugs/no_errors.JPG)
 ## Technologies Used
 * Languages: 
     * Python.
