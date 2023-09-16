@@ -118,7 +118,7 @@ class Hangman:
         if data not in self.word:
             self.tries -= 1
             print(
-                f"\n\n\n\nThat was incorrect, you have {self.tries}"
+                15*"\n", f"That was incorrect, you have {self.tries}"
                 " more tries to guess wrong.")
 
         while data in self.word:
@@ -126,7 +126,7 @@ class Hangman:
             self.secret_word[i] = data
             self.word[i] = "."
             print(
-                f"\n\n\n\nThat was correct! You have {self.tries}"
+                15*"\n", f"That was correct! You have {self.tries}"
                 " more tries to guess wrong.")
 
     def word_complete(self):
