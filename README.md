@@ -5,6 +5,10 @@
 The Hangman game is a Python terminal game deployed to Heroku. The goal of this game is to guess the secret word with one letter at a time. If the player guess it's wrong to many times the man hangs. If the player guess the word the man survives.
 
 ## User Experience
+### Site purpose
+To provide a simple fun game for people that want to challenge themself. 
+
+###
 
 ### User Goals
 As a user I want:
@@ -71,7 +75,7 @@ I been testing the code many times by my own in the local terminal and in the mo
 My family and my mentor [Oluwaseun Owonikoko](https://github.com/seunkoko) have also been testing it.
 ### Automated testing
 I used my school Code Institutes own validator https://pep8ci.herokuapp.com/ to check the code automated. I tested run.py, words.py, word_art.py and hangman_stages.py and the code had no errors or warnings in it.
-
+![Image of validator](documentation/screenshots/no_errors.JPG)
 ## Technologies Used
 * Languages: 
     * Python.
