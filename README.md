@@ -96,10 +96,12 @@ I used my school Code Institutes own validator https://pep8ci.herokuapp.com/ to 
         - To make word art. 
 ## Bugs
 ### Fixed bugs
-* On error that I had was when guessing a letter in lowercase, I got an error message saing it is invalid input. I fixed this by using the .upper() method on the input for guessing a letter. So if I guess with lowercase my guess becomes uppercase and that resulted in no error message.
+* One error that I had were when guessing a letter in lowercase, I got an error message saing it is invalid input. I fixed this by using the .upper() method on the input for guessing a letter. So if I guess with lowercase my guess becomes uppercase and that resulted in no error message.
 ![Error letter image](documentation/bugs/error_letter.JPG)
 * Another bug I had was that my data who where a string needed to become an integrer. So I solved this by changing the code to int(data).
 ![Error lvl image](documentation/bugs/error_lvl.JPG)
+### Remaining bugs
+* None currently known.
 
 ## Deployment
  The app was deployed through Heroku. The steps are as following:
